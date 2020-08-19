@@ -1,0 +1,30 @@
+{
+  "name": "moonpig-tech-test-node-backend",
+  "version": "0.1.0",
+  "description": "Mooonpig Node Backend Technical Test",
+  "main": "index.js",
+  "repository": "https://github.com/Moonpig/tech-test-node-backend",
+  "author": "Moonpig",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "@types/express": "^4.17.7",
+    "@types/jest": "^26.0.10",
+    "@types/node": "^14.0.27",
+    "@types/supertest": "^2.0.10",
+    "jest": "^26.3.0",
+    "jest-watch-typeahead": "^0.6.0",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "test": "jest --watch"
+  }
+}
