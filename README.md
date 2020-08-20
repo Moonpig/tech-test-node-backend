@@ -2,7 +2,7 @@
 
 # Node Backend Technical Challenge
 
-We've been asked to rebuild the Moonpig cards service using the latest best practices.  We'd like you to build out a simple service that provides two endpoints that our frontend can hit.  
+We've been asked to rebuild the Moonpig cards service using the latest best practices.  We'd like you to build a simple service that allows a client to fetch details about our cards collection, using multiple data sources to achieve this.  
 We have provided you with three JSON data sources in `/data` that should be used by the API to return the required JSON when a given endpoint is hit.
 
 ## Endpoints
