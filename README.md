@@ -122,3 +122,17 @@ We will assess the task based on the following criteria:
 We have provided a notes file `NOTES.md` for any notes that you wish to add that could help your application such as explaining why you've made certain decisions.
 
 Please note we appreciate that your free time is important and feel that doing less "well" is preferable to doing more "less well".  With this in mind if you feel that your code is unfinished please leave some notes explaining what you'd do given more time.  We'll be more than happy to review this.
+
+## Get Started
+
+Please follow the steps below to setup a private copy of this repository that you can iterate on and then submit to us. 
+
+1. Click on the green "Use this template" button on this repository
+  ![alt text](img/template-button.png "Template button screenshot")
+2. In the Owner dropdown select your personal GitHub account and provide a name for the repository.
+3. Set the repository visibility to "Private" and click on the green "Create repository from template" button.
+  ![alt text](img/create-repository.png "Create new repository from template screenshot")
+4. On your new repository click on the "Settings Tab" -> "Manage Access" then click on The green "Invite collaborator" button
+  ![alt text](img/settings.png "Repository settings screenshot")
+5. In the popup please add the following collaborators `willbamford`, `rbrtsmith`, `mmmurray` to enable us to review your submission.
+6. The repository should now be setup for you to clone down to your machine.
