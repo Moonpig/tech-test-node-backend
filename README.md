@@ -2,8 +2,9 @@
 
 # Node Backend Technical Challenge
 
-We've been asked to rebuild the Moonpig cards service using the latest best practices.  We'd like you to build a simple service that allows a client to fetch details about our cards collection, using multiple data sources to achieve this.  
-We have provided you with three JSON data sources in `/data` that should be used by the API to return the required JSON when a given endpoint is hit.
+You've been tasked with building a new "cards" service for the front-end of the Moonpig website. This exercise requires building a simple REST-like API with two endpoints - one for returning a list of cards and another which returns a single card instance.
+
+We have provided three JSON files in `/data` that serve as source data (imagine in a real system this file-based data would be replaced with database or remote API call).
 
 ## Endpoints
 
@@ -13,7 +14,7 @@ This endpoint returns a list of cards.
 - `backgroundImageUrl` should be the front-cover image found on the corresponding page template.
 - `url` should have the format `/cards/[id]`
 
-Expected JSON output
+Expected JSON output when hitting `/cards`:
 ```json
 [
   {
@@ -36,10 +37,11 @@ Expected JSON output
 
 ### `/cards/[cardId]/[sizeId]`
 
-This endpoint returns a single card by it's id.  It also takes an optional route parameter `sizeId` which is used to calculate the price.
-- `price` is calculated by the multiplying the `basePrice` on the card by the `priceMultiplier` from the selected size.  If no size is provided it should default to the `basePrice`.
+This endpoint returns a single card by it's `id`. It takes an optional route parameter `sizeId` - the sizing of a card affects its price.
 
-Expected JSON output when hitting `/cards/card001/gt`
+- `price` is calculated by the multiplying the `basePrice` of the card by the `priceMultiplier` from the selected size. If no size is provided it should default to the `basePrice`.
+
+Expected JSON output when hitting `/cards/card001/gt`:
 ```json
 {
   "title": "card 1 title",
@@ -91,13 +93,15 @@ Expected JSON output when hitting `/cards/card001/gt`
 
 ## Tools, Libraries and frameworks
 
-An app skeleton is provided for your convenience.  It consists of the following tools
+An app skeleton is provided for your convenience. It consists of the following tools:
+
 - Express
 - Jest for unit/integration testing
 - Supertest for integration tests
 - TypeScript - If you're not familiar with TypeScript you can use JavaScript instead.
 
 ## Scripts
+
 | Command | Description |
 |--|--|
 | `yarn dev` | run the server in development (watch) mode on port 7000 |
@@ -106,14 +110,15 @@ An app skeleton is provided for your convenience.  It consists of the following 
 
 ## Assessment
 
-  We will assess the task based on the following criteria:
+We will assess the task based on the following criteria:
 
-  - How clean, modular and extensible the code is
-  - Considerations for performance
-  - Approach to testing
-  - Knowledge of Node and it's APIs
+- How clean, modular and extensible the code is
+- Considerations for performance
+- Approach to testing
+- Knowledge of Node and it's APIs
 
 ## Notes
+
 We have provided a notes file `NOTES.md` for any notes that you wish to add that could help your application such as explaining why you've made certain decisions.
 
 Please note we appreciate that your free time is important and feel that doing less "well" is preferable to doing more "less well".  With this in mind if you feel that your code is unfinished please leave some notes explaining what you'd do given more time.  We'll be more than happy to review this.
