@@ -116,9 +116,14 @@ We will assess the task based on the following criteria:
 - Considerations for performance
 - Approach to testing
 - Knowledge of Node and it's APIs
+- Use of Git
 
 ## Notes
 
 We have provided a notes file `NOTES.md` for any notes that you wish to add that could help your application such as explaining why you've made certain decisions.
 
 Please note we appreciate that your free time is important and feel that doing less "well" is preferable to doing more "less well".  With this in mind if you feel that your code is unfinished please leave some notes explaining what you'd do given more time.  We'll be more than happy to review this.
+
+For your convenience we've made this a template repository so you can easily create a private copy.
+
+When it comes to submission please follow the instructions provided in the email you were sent.
