@@ -126,4 +126,4 @@ Please note we appreciate that your free time is important and feel that doing l
 
 For your convenience we've made this a template repository so you can easily create a private copy.
 
-When it comes to submission please follow the instructions provided in the email you were sent. . Please ensure you submit the .git folder alongside your code.
+When it comes to submission please follow the instructions provided in the email you were sent. Please ensure you submit the .git folder alongside your code.
