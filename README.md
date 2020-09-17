@@ -11,7 +11,7 @@ We have provided three JSON files in `/data` that serve as source data (imagine 
 ### `/cards`
 
 This endpoint returns a list of cards.
-- `imageUrl` should be the front-cover image found on the corresponding page template.
+- `imageUrl` should be the image found on the template that corresponds to the first page for the card.
 - `url` should have the format `/cards/[id]`
 
 Expected JSON response from `GET /cards`:
@@ -40,7 +40,8 @@ Expected JSON response from `GET /cards`:
 
 This endpoint returns a single card identified by its `id`. It takes an optional route parameter `sizeId` - the sizing of a card affects its price.
 
-- `price` is calculated by the multiplying the `basePrice` of the card by the `priceMultiplier` from the selected size. If no size is provided it should default to the `basePrice`.
+- `price` is calculated by the multiplying the `basePrice` of the card by the `priceMultiplier` from the selected size. If no size is provided it should default to the `basePrice`.  The `basePrice` is the amount in pence and the result should be formatted as
+a string e.g. `"£2.00"`.
 
 Expected JSON response from `GET /cards/card001/gt`:
 
@@ -63,7 +64,7 @@ Expected JSON response from `GET /cards/card001/gt`:
     }
   ],
   "imageUrl": "/front-cover-portrait-1.jpg",
-  "price": 400,
+  "price": "£4.00",
   "pages": [
     {
       "title": "Front Cover",
