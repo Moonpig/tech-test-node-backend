@@ -4,7 +4,7 @@
     "id": "card001",
     "title": "card 1 title",
     "sizes": ["sm", "md", "gt"],
-    "basePrice": 2.00,
+    "basePrice": 200,
     "pages": [
       {
         "title": "Front Cover",
@@ -28,7 +28,7 @@
     "id": "card002",
     "title": "card 2 title",
     "sizes": ["md"],
-    "basePrice": 2.00,
+    "basePrice": 200,
     "pages": [
       {
         "title": "Front Cover",
@@ -52,7 +52,7 @@
     "id": "card003",
     "title": "card 1 title",
     "sizes": ["md", "lg"],
-    "basePrice": 2.00,
+    "basePrice": 200,
     "pages": [
       {
         "title": "Front Cover",
