@@ -2,7 +2,7 @@
 
 # Node Backend Technical Challenge
 
-You've been tasked with building a new "cards" service for the front-end of the Moonpig website. This exercise requires building a simple REST-like API with two endpoints - one for returning a list of cards and another which returns a single card instance.
+You've been tasked with building a new "cards" service for the front-end of the Moonpig website. This exercise requires building a simple REST-like API with two endpoints - one for returning a list of cards and another that returns a single instance of a card.
 
 We have provided three JSON files in `/data` that serve as source data (imagine in a real system this file-based data would be replaced with database or remote API call).
 
@@ -14,7 +14,8 @@ This endpoint returns a list of cards.
 - `imageUrl` should be the front-cover image found on the corresponding page template.
 - `url` should have the format `/cards/[id]`
 
-Expected JSON output when hitting `/cards`:
+Expected JSON response from `GET /cards`:
+
 ```json
 [
   {
@@ -37,11 +38,12 @@ Expected JSON output when hitting `/cards`:
 
 ### `/cards/[cardId]/[sizeId]`
 
-This endpoint returns a single card by it's `id`. It takes an optional route parameter `sizeId` - the sizing of a card affects its price.
+This endpoint returns a single card identified by its `id`. It takes an optional route parameter `sizeId` - the sizing of a card affects its price.
 
 - `price` is calculated by the multiplying the `basePrice` of the card by the `priceMultiplier` from the selected size. If no size is provided it should default to the `basePrice`.
 
-Expected JSON output when hitting `/cards/card001/gt`:
+Expected JSON response from `GET /cards/card001/gt`:
+
 ```json
 {
   "title": "card 1 title",
@@ -115,7 +117,7 @@ We will assess the task based on the following criteria:
 - How clean, modular and extensible the code is
 - Considerations for performance
 - Approach to testing
-- Knowledge of Node and it's APIs
+- Knowledge of Node and its APIs
 - Use of Git
 
 ## Notes
