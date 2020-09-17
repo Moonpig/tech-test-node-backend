@@ -63,7 +63,7 @@ Expected JSON response from `GET /cards/card001/gt`:
     }
   ],
   "imageUrl": "/front-cover-portrait-1.jpg",
-  "price": "£4.00",
+  "price": 400,
   "pages": [
     {
       "title": "Front Cover",
