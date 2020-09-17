@@ -11,7 +11,7 @@ We have provided three JSON files in `/data` that serve as source data (imagine 
 ### `/cards`
 
 This endpoint returns a list of cards.
-- `backgroundImageUrl` should be the front-cover image found on the corresponding page template.
+- `imageUrl` should be the front-cover image found on the corresponding page template.
 - `url` should have the format `/cards/[id]`
 
 Expected JSON output when hitting `/cards`:
@@ -19,17 +19,17 @@ Expected JSON output when hitting `/cards`:
 [
   {
     "title": "card 1 title",
-    "backgroundImageUrl": "/front-cover-portrait-1.jpg",
+    "imageUrl": "/front-cover-portrait-1.jpg",
     "url": "/cards/card001"
   },
   {
     "title": "card 2 title",
-    "backgroundImageUrl": "/front-cover-portrait-2.jpg",
+    "imageUrl": "/front-cover-portrait-2.jpg",
     "url": "/cards/card002"
   },
   {
     "title": "card 3 title",
-    "backgroundImageUrl": "/front-cover-landscape.jpg",
+    "imageUrl": "/front-cover-landscape.jpg",
     "url": "/cards/card003"
   }
 ]
@@ -60,32 +60,32 @@ Expected JSON output when hitting `/cards/card001/gt`:
       "title": "Giant"
     }
   ],
-  "backgroundImageUrl": "/front-cover-portrait-1.jpg",
+  "imageUrl": "/front-cover-portrait-1.jpg",
   "price": "£4.00",
   "pages": [
     {
       "title": "Front Cover",
       "width": 300,
       "height": 600,
-      "backgroundImageUrl": "/front-cover-portrait-1.jpg"
+      "imageUrl": "/front-cover-portrait-1.jpg"
     },
     {
       "title": "Inside Left",
       "width": 300,
       "height": 600,
-      "backgroundImageUrl": ""
+      "imageUrl": ""
     },
     {
       "title": "Inside Right",
       "width": 300,
       "height": 600,
-      "backgroundImageUrl": ""
+      "imageUrl": ""
     },
     {
       "title": "Back Cover",
       "width": 300,
       "height": 600,
-      "backgroundImageUrl": "/back-cover-portrait.jpg"
+      "imageUrl": "/back-cover-portrait.jpg"
     }
   ]
 }

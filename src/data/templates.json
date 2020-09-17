@@ -3,48 +3,48 @@
     "id": "template001",
     "width": 300,
     "height": 600,
-    "backgroundImageUrl": "/front-cover-portrait-1.jpg"
+    "imageUrl": "/front-cover-portrait-1.jpg"
   },
   {
     "id": "template002",
     "width": 300,
     "height": 600,
-    "backgroundImageUrl": ""
+    "imageUrl": ""
   },
   {
     "id": "template003",
     "width": 300,
     "height": 600,
-    "backgroundImageUrl": ""
+    "imageUrl": ""
   },
   {
     "id": "template004",
     "width": 300,
     "height": 600,
-    "backgroundImageUrl": "/back-cover-portrait.jpg"
+    "imageUrl": "/back-cover-portrait.jpg"
   },
   {
     "id": "template005",
     "width": 300,
     "height": 600,
-    "backgroundImageUrl": "/font-cover-portrait-2.jpg"
+    "imageUrl": "/font-cover-portrait-2.jpg"
   },
   {
     "id": "template006",
     "width": 600,
     "height": 300,
-    "backgroundImageUrl": "/front-cover-landscape.jpg"
+    "imageUrl": "/front-cover-landscape.jpg"
   },
   {
     "id": "template007",
     "width": 600,
     "height": 300,
-    "backgroundImageUrl": ""
+    "imageUrl": ""
   },
   {
     "id": "template008",
     "width": 600,
     "height": 300,
-    "backgroundImageUrl": "/back-cover-landscape.jpg"
+    "imageUrl": "/back-cover-landscape.jpg"
   }
 ]
