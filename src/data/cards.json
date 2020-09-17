@@ -58,7 +58,7 @@
   },
   {
     "id": "card003",
-    "title": "card 1 title",
+    "title": "card 3 title",
     "sizes": ["md", "lg"],
     "basePrice": 200,
     "pages": [
