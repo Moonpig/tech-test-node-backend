@@ -7,18 +7,22 @@
     "basePrice": 200,
     "pages": [
       {
+        "id": "card001:1",
         "title": "Front Cover",
         "templateId": "template001"
       },
       {
+        "id": "card001:2",
         "title": "Inside Left",
         "templateId": "template002"
       },
       {
+        "id": "card001:3",
         "title": "Inside Right",
         "templateId": "template003"
       },
       {
+        "id": "card001:4",
         "title": "Back Cover",
         "templateId": "template004"
       }
@@ -31,18 +35,22 @@
     "basePrice": 200,
     "pages": [
       {
+        "id": "card002:1",
         "title": "Front Cover",
         "templateId": "template005"
       },
       {
+        "id": "card002:2",
         "title": "Inside Left",
         "templateId": "template002"
       },
       {
+        "id": "card002:3",
         "title": "Inside Right",
         "templateId": "template003"
       },
       {
+        "id": "card002:4",
         "title": "Back Cover",
         "templateId": "template004"
       }
@@ -55,18 +63,22 @@
     "basePrice": 200,
     "pages": [
       {
+        "id": "card003:1",
         "title": "Front Cover",
         "templateId": "template006"
       },
       {
+        "id": "card003:2",
         "title": "Inside Top",
         "templateId": "template007"
       },
       {
+        "id": "card003:3",
         "title": "Inside Bottom",
         "templateId": "template007"
       },
       {
+        "id": "card003:4",
         "title": "Back Cover",
         "templateId": "template008"
       }
