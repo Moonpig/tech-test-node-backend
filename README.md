@@ -11,8 +11,7 @@ We have provided three JSON files in `/data` that serve as source data (imagine 
 ### `/cards`
 
 This endpoint returns a list of cards.
-
-- `backgroundImageUrl` should be the front-cover image found on the corresponding page template.
+- `imageUrl` should be the image found on the template that corresponds to the first page for the card.
 - `url` should have the format `/cards/[id]`
 
 Expected JSON response from `GET /cards`:
@@ -21,17 +20,17 @@ Expected JSON response from `GET /cards`:
 [
   {
     "title": "card 1 title",
-    "backgroundImageUrl": "/front-cover-portrait-1.jpg",
+    "imageUrl": "/front-cover-portrait-1.jpg",
     "url": "/cards/card001"
   },
   {
     "title": "card 2 title",
-    "backgroundImageUrl": "/front-cover-portrait-2.jpg",
+    "imageUrl": "/front-cover-portrait-2.jpg",
     "url": "/cards/card002"
   },
   {
     "title": "card 3 title",
-    "backgroundImageUrl": "/front-cover-landscape.jpg",
+    "imageUrl": "/front-cover-landscape.jpg",
     "url": "/cards/card003"
   }
 ]
@@ -41,7 +40,8 @@ Expected JSON response from `GET /cards`:
 
 This endpoint returns a single card identified by its `id`. It takes an optional route parameter `sizeId` - the sizing of a card affects its price.
 
-- `price` is calculated by the multiplying the `basePrice` of the card by the `priceMultiplier` from the selected size. If no size is provided it should default to the `basePrice`.
+- `price` is calculated by the multiplying the `basePrice` of the card by the `priceMultiplier` from the selected size. If no size is provided it should default to the `basePrice`.  The `basePrice` is the amount in pence and the result should be formatted as
+a string e.g. `"£2.00"`.
 
 Expected JSON response from `GET /cards/card001/gt`:
 
@@ -63,32 +63,32 @@ Expected JSON response from `GET /cards/card001/gt`:
       "title": "Giant"
     }
   ],
-  "backgroundImageUrl": "/front-cover-portrait-1.jpg",
+  "imageUrl": "/front-cover-portrait-1.jpg",
   "price": "£4.00",
   "pages": [
     {
       "title": "Front Cover",
       "width": 300,
       "height": 600,
-      "backgroundImageUrl": "/front-cover-portrait-1.jpg"
+      "imageUrl": "/front-cover-portrait-1.jpg"
     },
     {
       "title": "Inside Left",
       "width": 300,
       "height": 600,
-      "backgroundImageUrl": ""
+      "imageUrl": ""
     },
     {
       "title": "Inside Right",
       "width": 300,
       "height": 600,
-      "backgroundImageUrl": ""
+      "imageUrl": ""
     },
     {
       "title": "Back Cover",
       "width": 300,
       "height": 600,
-      "backgroundImageUrl": "/back-cover-portrait.jpg"
+      "imageUrl": "/back-cover-portrait.jpg"
     }
   ]
 }

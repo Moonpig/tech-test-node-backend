@@ -4,7 +4,7 @@
     "id": "card001",
     "title": "card 1 title",
     "sizes": ["sm", "md", "gt"],
-    "basePrice": 2.00,
+    "basePrice": 200,
     "pages": [
       {
         "title": "Front Cover",
@@ -28,7 +28,7 @@
     "id": "card002",
     "title": "card 2 title",
     "sizes": ["md"],
-    "basePrice": 2.00,
+    "basePrice": 200,
     "pages": [
       {
         "title": "Front Cover",
@@ -50,20 +50,20 @@
   },
   {
     "id": "card003",
-    "title": "card 1 title",
+    "title": "card 3 title",
     "sizes": ["md", "lg"],
-    "basePrice": 2.00,
+    "basePrice": 200,
     "pages": [
       {
         "title": "Front Cover",
         "templateId": "template006"
       },
       {
-        "title": "Inside Left",
+        "title": "Inside Top",
         "templateId": "template007"
       },
       {
-        "title": "Inside Right",
+        "title": "Inside Bottom",
         "templateId": "template007"
       },
       {
