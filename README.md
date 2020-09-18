@@ -4,7 +4,12 @@
 
 You've been tasked with building a new "cards" service for the front-end of the Moonpig website. This exercise requires building a simple REST-like API with two endpoints - one for returning a list of cards and another that returns a single instance of a card.
 
-We have provided three JSON files in `/data` that serve as source data (imagine in a real system this file-based data would be replaced with database or remote API call).
+We have provided three JSON files that serve as source data - you can find them at the following URLs:
+https://moonpig.github.io/tech-test-node-backend/cards.json
+https://moonpig.github.io/tech-test-node-backend/sizes.json
+https://moonpig.github.io/tech-test-node-backend/templates.json
+
+Please treat these as a remote data source, rather than manually downloading and integrating into your application locally.
 
 ## Endpoints
 
