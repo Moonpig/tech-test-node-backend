@@ -5,6 +5,7 @@ const createCard = (card: CardDTO): Card => {
     return {
       title: card.title,
       id: card.id,
+      url: `/cards/${card.id}`,
     };
   };
 
