@@ -1,6 +1,6 @@
 import e from "express";
 import createCard from "../../../models/card";
-import { CardDTO, CardSize } from "../../../types/index";
+import { Card, CardDTO, CardSize } from "../../../types/index";
 
 let cardDTO: CardDTO = {
   id: "card001",
@@ -78,18 +78,26 @@ let cardSizes: CardSize[] = [
   },
 ];
 
-describe("Card Domain", () => {
-  const card = createCard(cardDTO, cardSizes);
+let card: Card = null;
 
-  test("getSummary returns correct summary details", () => {
-    const summary = card.getSummary();
-    expect(summary.title).toBe("card 1 title");
-    expect(summary.imageUrl).toBe("/front-cover-portrait-1.jpg");
-    expect(summary.url).toBe("/cards/card001");
+describe("Card Domain", () => {
+  beforeEach(() => {
+    card = createCard(cardDTO, cardSizes);
   });
 
-  test("getDetails returns correct details", () => {
-    const details = card.getDetails();
-    expect(details.title).toBe("card 1 title");
+  describe("Card Summary", () => {
+    test("returns correct summary details", () => {
+      const summary = card.getSummary();
+      expect(summary.title).toBe("card 1 title");
+      expect(summary.imageUrl).toBe("/front-cover-portrait-1.jpg");
+      expect(summary.url).toBe("/cards/card001");
+    });
+  });
+
+  describe("Card Details", () => {
+    test("getDetails returns correct details", () => {
+      const details = card.getDetails();
+      expect(details.title).toBe("card 1 title");
+    });
   });
 });
