@@ -95,14 +95,19 @@ describe("Card Domain", () => {
   });
 
   describe("Card Details", () => {
-    test("getDetails returns correct title", () => {
+    test("returns correct title", () => {
       const details = card.getDetails("sm");
       expect(details.title).toBe("card 1 title");
     });
 
-    test("getDetails returns correct size", () => {
+    test("returns correct size", () => {
       const details = card.getDetails("sm");
       expect(details.title).toBe("card 1 title");
+    });
+
+    test("returns correct imageUrl", () => {
+      const details = card.getDetails("sm");
+      expect(details.title).toBe("/front-cover-portrait-1.jpg");
     });
   });
 });

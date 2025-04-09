@@ -34,7 +34,7 @@ export interface CardDetails {
   //     id: string;
   //     title: string;
   //   }[];
-  //   imageUrl: string;
+  imageUrl: string;
   //   price: number;
   //   pages: {
   //     title: string;
