@@ -1,6 +1,6 @@
 import e from "express";
 import createCard from "../../../models/card";
-import { Card, CardDTO, CardSize } from "../../../types/index";
+import { Card, CardDTO, CardTemplate } from "../../../types/index";
 
 let cardDTO: CardDTO = {
   id: "card001",
@@ -27,7 +27,7 @@ let cardDTO: CardDTO = {
   ],
 };
 
-let cardSizes: CardSize[] = [
+let cardSizes: CardTemplate[] = [
   {
     id: "template001",
     width: 300,

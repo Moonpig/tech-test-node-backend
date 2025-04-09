@@ -3,15 +3,15 @@ import {
   CardDTO,
   Card,
   CardSummary,
-  CardSize,
+  CardTemplate,
   CardDetails,
 } from "../types/index";
 
-const createCard = (card: CardDTO, sizes: CardSize[]): Card => {
+const createCard = (card: CardDTO, templates: CardTemplate[]): Card => {
   const getSummary = (): CardSummary => {
     return {
       title: card.title,
-      imageUrl: sizes[0].imageUrl,
+      imageUrl: templates[0].imageUrl,
       url: `/cards/${card.id}`,
     };
   };
@@ -20,7 +20,7 @@ const createCard = (card: CardDTO, sizes: CardSize[]): Card => {
     return {
       title: card.title,
       size,
-      imageUrl: sizes[0].imageUrl,
+      imageUrl: templates[0].imageUrl,
     };
   };
 

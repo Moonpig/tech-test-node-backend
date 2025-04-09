@@ -20,7 +20,7 @@ export interface CardSummary {
   url: string;
 }
 
-export interface CardSize {
+export interface CardTemplate {
   id: string;
   width: number;
   height: number;
