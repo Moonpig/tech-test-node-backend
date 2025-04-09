@@ -16,4 +16,5 @@ export interface Card {
 export interface CardSummary {
   id: string;
   title: string;
+  url: string;
 }

@@ -1,3 +1,4 @@
+import e from "express";
 import createCard from "../../../models/card";
 import { CardDTO } from "../../../types/index";
 
@@ -33,5 +34,6 @@ describe("Card Domain", () => {
     const summary = card.getSummary();
     expect(summary.title).toBe("card 1 title");
     expect(summary.id).toBe("card001");
+    expect(summary.url).toBe("/cards/card001");
   });
 });
