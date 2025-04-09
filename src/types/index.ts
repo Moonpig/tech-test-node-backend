@@ -43,3 +43,9 @@ export interface CardDetails {
   //     imageUrl: string;
   //   };
 }
+
+export interface CardSize {
+  id: string;
+  title: string;
+  priceMultiplier: number;
+}

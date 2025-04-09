@@ -1,6 +1,6 @@
 import e from "express";
 import createCard from "../../../models/card";
-import { Card, CardDTO, CardTemplate } from "../../../types/index";
+import { Card, CardDTO, CardSize, CardTemplate } from "../../../types/index";
 
 let cardDTO: CardDTO = {
   id: "card001",
@@ -27,7 +27,7 @@ let cardDTO: CardDTO = {
   ],
 };
 
-let cardSizes: CardTemplate[] = [
+let cardTemplates: CardTemplate[] = [
   {
     id: "template001",
     width: 300,
@@ -78,11 +78,34 @@ let cardSizes: CardTemplate[] = [
   },
 ];
 
+const cardSizes: CardSize[] = [
+  {
+    id: "sm",
+    title: "Small",
+    priceMultiplier: 0.8,
+  },
+  {
+    id: "md",
+    title: "Medium",
+    priceMultiplier: 1,
+  },
+  {
+    id: "lg",
+    title: "Large",
+    priceMultiplier: 1.4,
+  },
+  {
+    id: "gt",
+    title: "Giant",
+    priceMultiplier: 2,
+  },
+];
+
 let card: Card = null;
 
 describe("Card Domain", () => {
   beforeEach(() => {
-    card = createCard(cardDTO, cardSizes);
+    card = createCard(cardDTO, cardTemplates, cardSizes);
   });
 
   describe("Card Summary", () => {
