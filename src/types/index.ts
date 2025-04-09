@@ -36,12 +36,12 @@ export interface CardDetails {
   }[];
   imageUrl: string;
   price: number;
-  //   pages: {
-  //     title: string;
-  //     width: number;
-  //     height: number;
-  //     imageUrl: string;
-  //   };
+  pages: {
+    title: string;
+    width: number;
+    height: number;
+    imageUrl: string;
+  }[];
 }
 
 export interface CardSize {

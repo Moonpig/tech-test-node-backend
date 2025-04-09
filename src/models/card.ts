@@ -38,6 +38,16 @@ const createCard = (
         }),
       price:
         card.basePrice * cardSizes.find((s) => s.id === size).priceMultiplier,
+      pages: card.pages.map((page) => {
+        const template = templates.find((t) => t.id === page.templateId);
+
+        return {
+          title: page.title,
+          width: template.width,
+          height: template.height,
+          imageUrl: template.imageUrl,
+        };
+      }),
     };
   };
 

@@ -1,6 +1,7 @@
 import e from "express";
 import createCard from "../../../models/card";
 import { Card, CardDTO, CardSize, CardTemplate } from "../../../types/index";
+import exp from "constants";
 
 const cardDTO: CardDTO = {
   id: "card001",
@@ -152,6 +153,17 @@ describe("Card Domain", () => {
 
     test("if an invalid size is passed, it should throw an error", () => {
       expect(() => card.getDetails("xx")).toThrow(`Size xx not found`);
+    });
+
+    test("return the correct pages", () => {
+      const details = card.getDetails("sm");
+      expect(details.pages.length).toBe(4);
+      expect(details.pages[0]).toMatchObject({
+        title: "Front Cover",
+        width: 300,
+        height: 600,
+        imageUrl: "/front-cover-portrait-1.jpg",
+      });
     });
   });
 });
