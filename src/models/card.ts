@@ -6,6 +6,7 @@ import {
   CardTemplate,
   CardDetails,
   CardSize,
+  Price,
 } from "../types/index";
 
 const createCard = (
@@ -49,7 +50,9 @@ const createCard = (
         .map((id) => cardSizesMap[id])
         .filter((size): size is CardSize => !!size)
         .map((size) => ({ id: size.id, title: size.title })),
-      price: card.basePrice * cardSizesMap[cardSize.id].priceMultiplier,
+      price: `£${(
+        card.basePrice * cardSizesMap[cardSize.id].priceMultiplier
+      ).toFixed(2)}` as Price,
       pages,
     };
   };
