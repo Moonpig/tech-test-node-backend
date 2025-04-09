@@ -14,6 +14,7 @@ interface Card {
 }
 
 interface CardSummary {
+  id: string;
   title: string;
 }
 
@@ -60,5 +61,6 @@ describe("Card Domain", () => {
   test("getSummary returns correct summary details", () => {
     const summary = card.getSummary();
     expect(summary.title).toBe("card 1 title");
+    expect(summary.id).toBe("card001");
   });
 });
