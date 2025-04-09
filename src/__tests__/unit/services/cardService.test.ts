@@ -1,3 +1,4 @@
+import e from "express";
 import * as cardService from "../../../services/cardService";
 import { CardDTO, CardSizeDTO, CardTemplateDTO } from "../../../types/index";
 
@@ -62,5 +63,18 @@ describe("cardService", () => {
     expect(list[0]).toHaveProperty("title", "card 1 title");
     expect(list[0]).toHaveProperty("imageUrl", "/front-cover-portrait-1.jpg");
     expect(list[0]).toHaveProperty("url", "/cards/card001");
+  });
+
+  it("getCardDetail returns card details", async () => {
+    mockFetchAll();
+    const detail = await cardService.getCardDetail("card001", "gt");
+    expect(detail).not.toBeNull();
+    if (detail) {
+      expect(detail.price).toBe("£400.00");
+      expect(detail.title).toBe("card 1 title");
+      expect(detail.size).toBe("gt");
+      expect(detail.imageUrl).toBe("/front-cover-portrait-1.jpg");
+      expect(detail.availableSizes.length).toBe(3);
+    }
   });
 });
