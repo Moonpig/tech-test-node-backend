@@ -149,5 +149,9 @@ describe("Card Domain", () => {
         cardSizes.find((size) => size.id === "sm").priceMultiplier;
       expect(details.price).toBe(expectedprice);
     });
+
+    test("if an invalid size is passed, it should throw an error", () => {
+      expect(() => card.getDetails("xx")).toThrow(`Size xx not found`);
+    });
   });
 });
