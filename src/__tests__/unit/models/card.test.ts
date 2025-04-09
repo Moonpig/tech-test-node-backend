@@ -87,4 +87,9 @@ describe("Card Domain", () => {
     expect(summary.imageUrl).toBe("/front-cover-portrait-1.jpg");
     expect(summary.url).toBe("/cards/card001");
   });
+
+  test("getDetails returns correct details", () => {
+    const details = card.getDetails();
+    expect(details.title).toBe("card 1 title");
+  });
 });

@@ -11,6 +11,7 @@ export interface CardDTO {
 
 export interface Card {
   getSummary: () => CardSummary;
+  getDetails: () => CardDetails;
 }
 
 export interface CardSummary {
@@ -24,4 +25,21 @@ export interface CardSize {
   width: number;
   height: number;
   imageUrl: string;
+}
+
+export interface CardDetails {
+  title: string;
+  size: string;
+  availableSizes: {
+    id: string;
+    title: string;
+  }[];
+  imageUrl: string;
+  price: number;
+  pages: {
+    title: string;
+    width: number;
+    height: number;
+    imageUrl: string;
+  };
 }
