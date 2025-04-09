@@ -22,6 +22,7 @@ const createCard = (card: CardDTO): Card => {
   const getSummary = (): CardSummary => {
     return {
       title: card.title,
+      id: card.id,
     };
   };
 
