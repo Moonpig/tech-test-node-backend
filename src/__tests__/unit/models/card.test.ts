@@ -165,5 +165,12 @@ describe("Card Domain", () => {
         imageUrl: "/front-cover-portrait-1.jpg",
       });
     });
+
+    test("if a card page template is not found, it should throw an error", () => {
+      cardDTO.pages[0].templateId = "non-existing-template-id";
+      expect(() => card.getDetails("sm")).toThrow(
+        `Template with id non-existing-template-id not found`
+      );
+    });
   });
 });
