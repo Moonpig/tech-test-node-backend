@@ -10,12 +10,18 @@ interface CardDTO {
 }
 
 interface Card {
-  getSummary: () => {};
+  getSummary: () => CardSummary;
 }
 
-const createCard = (card): { getSummary: () => { title: string } } => {
-  const getSummary = () => {
-    return { title: "" };
+interface CardSummary {
+  title: string;
+}
+
+const createCard = (card: CardDTO): Card => {
+  const getSummary = (): CardSummary => {
+    return {
+      title: card.title,
+    };
   };
 
   return {
