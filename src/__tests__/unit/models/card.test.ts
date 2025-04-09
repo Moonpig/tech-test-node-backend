@@ -2,7 +2,7 @@ import e from "express";
 import createCard from "../../../models/card";
 import { Card, CardDTO, CardSize, CardTemplate } from "../../../types/index";
 
-let cardDTO: CardDTO = {
+const cardDTO: CardDTO = {
   id: "card001",
   title: "card 1 title",
   sizes: ["sm", "md", "gt"],
@@ -27,7 +27,7 @@ let cardDTO: CardDTO = {
   ],
 };
 
-let cardTemplates: CardTemplate[] = [
+const cardTemplates: CardTemplate[] = [
   {
     id: "template001",
     width: 300,
@@ -140,6 +140,14 @@ describe("Card Domain", () => {
         { id: "md", title: "Medium" },
         { id: "gt", title: "Giant" },
       ]);
+    });
+
+    test("returns the correct price", () => {
+      const details = card.getDetails("sm");
+      const expectedprice =
+        cardDTO.basePrice *
+        cardSizes.find((size) => size.id === "sm").priceMultiplier;
+      expect(details.price).toBe(expectedprice);
     });
   });
 });

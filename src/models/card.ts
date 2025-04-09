@@ -31,6 +31,8 @@ const createCard = (
         .map((availableSize) => {
           return { id: availableSize.id, title: availableSize.title };
         }),
+      price:
+        card.basePrice * cardSizes.find((s) => s.id === size).priceMultiplier,
     };
   };
 
