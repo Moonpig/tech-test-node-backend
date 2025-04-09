@@ -22,6 +22,11 @@ const createCard = (
   };
 
   const getDetails = (size: string): CardDetails => {
+    const cardSize = cardSizes.find((s) => s.id === size);
+    if (!cardSize) {
+      throw new Error(`Size ${size} not found`);
+    }
+
     return {
       title: card.title,
       size,
