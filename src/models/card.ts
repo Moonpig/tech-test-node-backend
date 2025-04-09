@@ -20,6 +20,7 @@ const createCard = (card: CardDTO, sizes: CardSize[]): Card => {
     return {
       title: card.title,
       size,
+      imageUrl: sizes[0].imageUrl,
     };
   };
 

@@ -107,7 +107,7 @@ describe("Card Domain", () => {
 
     test("returns correct imageUrl", () => {
       const details = card.getDetails("sm");
-      expect(details.title).toBe("/front-cover-portrait-1.jpg");
+      expect(details.imageUrl).toBe("/front-cover-portrait-1.jpg");
     });
   });
 });
