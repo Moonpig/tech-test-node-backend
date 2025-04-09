@@ -3,16 +3,16 @@ import {
   CardDTO,
   Card,
   CardSummary,
-  CardTemplate,
+  CardTemplateDTO,
   CardDetails,
-  CardSize,
+  CardSizeDTO,
   Price,
 } from "../types/index";
 
 const createCard = (
   card: CardDTO,
-  templatesMap: Record<string, CardTemplate>,
-  cardSizesMap: Record<string, CardSize>
+  templatesMap: Record<string, CardTemplateDTO>,
+  cardSizesMap: Record<string, CardSizeDTO>
 ): Card => {
   const getSummary = (): CardSummary => {
     return {
@@ -48,7 +48,7 @@ const createCard = (
       imageUrl: pages.length ? pages[0].imageUrl : "",
       availableSizes: card.sizes
         .map((id) => cardSizesMap[id])
-        .filter((size): size is CardSize => !!size)
+        .filter((size): size is CardSizeDTO => !!size)
         .map((size) => ({ id: size.id, title: size.title })),
       price: `£${(
         card.basePrice * cardSizesMap[cardSize.id].priceMultiplier

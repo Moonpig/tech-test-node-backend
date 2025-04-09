@@ -1,5 +1,10 @@
 import createCard from "../../../models/card";
-import { Card, CardDTO, CardSize, CardTemplate } from "../../../types/index";
+import {
+  Card,
+  CardDTO,
+  CardSizeDTO,
+  CardTemplateDTO,
+} from "../../../types/index";
 
 const cardDTO: CardDTO = {
   id: "card001",
@@ -26,7 +31,7 @@ const cardDTO: CardDTO = {
   ],
 };
 
-const cardTemplatesMap: Record<string, CardTemplate> = {
+const cardTemplatesMap: Record<string, CardTemplateDTO> = {
   template001: {
     id: "template001",
     width: 300,
@@ -77,7 +82,7 @@ const cardTemplatesMap: Record<string, CardTemplate> = {
   },
 };
 
-const cardSizeMap: Record<string, CardSize> = {
+const cardSizeMap: Record<string, CardSizeDTO> = {
   sm: {
     id: "sm",
     title: "Small",

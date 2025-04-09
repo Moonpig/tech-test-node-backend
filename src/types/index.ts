@@ -20,7 +20,7 @@ export interface CardSummary {
   url: string;
 }
 
-export interface CardTemplate {
+export interface CardTemplateDTO {
   id: string;
   width: number;
   height: number;
@@ -44,7 +44,7 @@ export interface CardDetails {
   }[];
 }
 
-export interface CardSize {
+export interface CardSizeDTO {
   id: string;
   title: string;
   priceMultiplier: number;
