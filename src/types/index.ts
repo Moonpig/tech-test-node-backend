@@ -35,7 +35,7 @@ export interface CardDetails {
     title: string;
   }[];
   imageUrl: string;
-  price: number;
+  price: Price;
   pages: {
     title: string;
     width: number;
@@ -49,3 +49,5 @@ export interface CardSize {
   title: string;
   priceMultiplier: number;
 }
+
+export type Price = `${"£"}${number}.${"00"}`;

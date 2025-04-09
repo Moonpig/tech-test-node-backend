@@ -141,11 +141,11 @@ describe("Card Domain", () => {
       ]);
     });
 
-    test("returns the correct price", () => {
+    test("returns the correct price correctly formatted", () => {
       const details = card.getDetails("sm");
       const expectedprice =
         cardDTO.basePrice * cardSizeMap["sm"].priceMultiplier;
-      expect(details.price).toBe(expectedprice);
+      expect(details.price).toBe(`£${expectedprice.toFixed(2)}`);
     });
 
     test("if an invalid size is passed, it should throw an error", () => {
