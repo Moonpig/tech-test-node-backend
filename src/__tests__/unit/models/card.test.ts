@@ -1,37 +1,7 @@
-interface CardDTO {
-  id: string;
-  title: string;
-  sizes: string[];
-  basePrice: number;
-  pages: {
-    title: string;
-    templateId: string;
-  }[];
-}
+import createCard from "../../../models/card";
+import { CardDTO } from "../../../types/index";
 
-interface Card {
-  getSummary: () => CardSummary;
-}
-
-interface CardSummary {
-  id: string;
-  title: string;
-}
-
-const createCard = (card: CardDTO): Card => {
-  const getSummary = (): CardSummary => {
-    return {
-      title: card.title,
-      id: card.id,
-    };
-  };
-
-  return {
-    getSummary,
-  };
-};
-
-let cardDTO = {
+let cardDTO: CardDTO = {
   id: "card001",
   title: "card 1 title",
   sizes: ["sm", "md", "gt"],
