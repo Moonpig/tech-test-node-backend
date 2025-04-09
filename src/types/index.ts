@@ -30,10 +30,10 @@ export interface CardTemplate {
 export interface CardDetails {
   title: string;
   size: string;
-  //   availableSizes: {
-  //     id: string;
-  //     title: string;
-  //   }[];
+  availableSizes: {
+    id: string;
+    title: string;
+  }[];
   imageUrl: string;
   //   price: number;
   //   pages: {

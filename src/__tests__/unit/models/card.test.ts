@@ -109,5 +109,14 @@ describe("Card Domain", () => {
       const details = card.getDetails("sm");
       expect(details.imageUrl).toBe("/front-cover-portrait-1.jpg");
     });
+
+    test("returns correct available sizes", () => {
+      const details = card.getDetails("sm");
+      expect(details.availableSizes).toEqual([
+        { id: "sm", title: "Small" },
+        { id: "md", title: "Medium" },
+        { id: "gt", title: "Giant" },
+      ]);
+    });
   });
 });
