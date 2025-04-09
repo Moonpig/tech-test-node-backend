@@ -33,7 +33,7 @@ describe("Card Domain", () => {
   test("getSummary returns correct summary details", () => {
     const summary = card.getSummary();
     expect(summary.title).toBe("card 1 title");
-    expect(summary.id).toBe("card001");
+    expect(summary.imageUrl).toBe("/front-cover-portrait-1.jpg");
     expect(summary.url).toBe("/cards/card001");
   });
 });
