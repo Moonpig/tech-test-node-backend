@@ -1,7 +1,5 @@
-import e from "express";
 import createCard from "../../../models/card";
 import { Card, CardDTO, CardSize, CardTemplate } from "../../../types/index";
-import exp from "constants";
 
 const cardDTO: CardDTO = {
   id: "card001",
@@ -28,85 +26,85 @@ const cardDTO: CardDTO = {
   ],
 };
 
-const cardTemplates: CardTemplate[] = [
-  {
+const cardTemplatesMap: Record<string, CardTemplate> = {
+  template001: {
     id: "template001",
     width: 300,
     height: 600,
     imageUrl: "/front-cover-portrait-1.jpg",
   },
-  {
+  template002: {
     id: "template002",
     width: 300,
     height: 600,
     imageUrl: "",
   },
-  {
+  template003: {
     id: "template003",
     width: 300,
     height: 600,
     imageUrl: "",
   },
-  {
+  template004: {
     id: "template004",
     width: 300,
     height: 600,
     imageUrl: "/back-cover-portrait.jpg",
   },
-  {
+  template005: {
     id: "template005",
     width: 300,
     height: 600,
     imageUrl: "/front-cover-portrait-2.jpg",
   },
-  {
+  template006: {
     id: "template006",
     width: 600,
     height: 300,
     imageUrl: "/front-cover-landscape.jpg",
   },
-  {
+  template007: {
     id: "template007",
     width: 600,
     height: 300,
     imageUrl: "",
   },
-  {
+  template008: {
     id: "template008",
     width: 600,
     height: 300,
     imageUrl: "/back-cover-landscape.jpg",
   },
-];
+};
 
-const cardSizes: CardSize[] = [
-  {
+const cardSizeMap: Record<string, CardSize> = {
+  sm: {
     id: "sm",
     title: "Small",
     priceMultiplier: 0.8,
   },
-  {
+  md: {
     id: "md",
     title: "Medium",
     priceMultiplier: 1,
   },
-  {
+  lg: {
     id: "lg",
     title: "Large",
     priceMultiplier: 1.4,
   },
-  {
+  gt: {
     id: "gt",
     title: "Giant",
     priceMultiplier: 2,
   },
-];
+};
 
 let card: Card = null;
 
 describe("Card Domain", () => {
   beforeEach(() => {
-    card = createCard(cardDTO, cardTemplates, cardSizes);
+    card = createCard(cardDTO, cardTemplatesMap, cardSizeMap);
   });
 
   describe("Card Summary", () => {
@@ -146,8 +144,7 @@ describe("Card Domain", () => {
     test("returns the correct price", () => {
       const details = card.getDetails("sm");
       const expectedprice =
-        cardDTO.basePrice *
-        cardSizes.find((size) => size.id === "sm").priceMultiplier;
+        cardDTO.basePrice * cardSizeMap["sm"].priceMultiplier;
       expect(details.price).toBe(expectedprice);
     });
 
