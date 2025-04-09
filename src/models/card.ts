@@ -40,6 +40,9 @@ const createCard = (
         card.basePrice * cardSizes.find((s) => s.id === size).priceMultiplier,
       pages: card.pages.map((page) => {
         const template = templates.find((t) => t.id === page.templateId);
+        if (!template) {
+          throw new Error(`Template with id ${page.templateId} not found`);
+        }
 
         return {
           title: page.title,
