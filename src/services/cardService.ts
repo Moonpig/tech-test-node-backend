@@ -3,6 +3,7 @@ import {
   CardSizeDTO,
   CardTemplateDTO,
   CardSummary,
+  CardDetails,
 } from "../types/index";
 import createCard from "../models/card";
 
@@ -37,6 +38,44 @@ const fetchRemoteData = async (): Promise<{
 };
 
 export const getCardsList = async (): Promise<CardSummary[]> => {
+  let cards: CardDTO[] = [];
+  let sizes: CardSizeDTO[] = [];
+  let templates: CardTemplateDTO[] = [];
+
+  try {
+    ({ cards, sizes, templates } = await fetchRemoteData());
+  } catch (error) {
+    throw new Error(
+      `Error fetching remote data: ${
+        error instanceof Error ? error.message : String(error)
+      }`
+    );
+  }
+  let sizesMap: Record<string, CardSizeDTO> = {};
+  let templatesMap: Record<string, CardTemplateDTO> = {};
+
+  sizesMap = sizes.reduce<Record<string, CardSizeDTO>>((map, size) => {
+    map[size.id] = size;
+    return map;
+  }, {});
+  templatesMap = templates.reduce<Record<string, CardTemplateDTO>>(
+    (map, template) => {
+      map[template.id] = template;
+      return map;
+    },
+    {}
+  );
+
+  return cards.map((CardDTO) => {
+    const card = createCard(CardDTO, templatesMap, sizesMap);
+    return card.getSummary();
+  });
+};
+
+export const getCardDetail = async (
+  cardId: string,
+  sizeId?: string
+): Promise<CardDetails | null> => {
   const { cards, sizes, templates } = await fetchRemoteData();
   const sizesMap = sizes.reduce<Record<string, CardSizeDTO>>((map, size) => {
     map[size.id] = size;
@@ -50,8 +89,19 @@ export const getCardsList = async (): Promise<CardSummary[]> => {
     {}
   );
 
-  return cards.map((CardDTO) => {
-    const card = createCard(CardDTO, templatesMap, sizesMap);
-    return card.getSummary();
-  });
+  const cardDTO = cards.find((card) => card.id === cardId);
+  if (!cardDTO) {
+    return null;
+  }
+
+  try {
+    const card = createCard(cardDTO, templatesMap, sizesMap);
+    return card.getDetails(sizeId);
+  } catch (error) {
+    throw new Error(
+      `Error creating card: ${
+        error instanceof Error ? error.message : String(error)
+      }`
+    );
+  }
 };
