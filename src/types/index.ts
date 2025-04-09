@@ -29,17 +29,17 @@ export interface CardSize {
 
 export interface CardDetails {
   title: string;
-  size: string;
-  availableSizes: {
-    id: string;
-    title: string;
-  }[];
-  imageUrl: string;
-  price: number;
-  pages: {
-    title: string;
-    width: number;
-    height: number;
-    imageUrl: string;
-  };
+  //   size: string;
+  //   availableSizes: {
+  //     id: string;
+  //     title: string;
+  //   }[];
+  //   imageUrl: string;
+  //   price: number;
+  //   pages: {
+  //     title: string;
+  //     width: number;
+  //     height: number;
+  //     imageUrl: string;
+  //   };
 }

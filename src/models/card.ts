@@ -1,4 +1,11 @@
-import { CardDTO, Card, CardSummary, CardSize } from "../types/index";
+import { title } from "process";
+import {
+  CardDTO,
+  Card,
+  CardSummary,
+  CardSize,
+  CardDetails,
+} from "../types/index";
 
 const createCard = (card: CardDTO, sizes: CardSize[]): Card => {
   const getSummary = (): CardSummary => {
@@ -9,8 +16,15 @@ const createCard = (card: CardDTO, sizes: CardSize[]): Card => {
     };
   };
 
+  const getDetails = (): CardDetails => {
+    return {
+      title: card.title,
+    };
+  };
+
   return {
     getSummary,
+    getDetails,
   };
 };
 
