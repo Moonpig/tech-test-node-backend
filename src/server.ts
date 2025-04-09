@@ -1,13 +1,9 @@
 import express from "express";
+import * as cardController from "./controllers/cardController";
 
-export const app = express()
+export const app = express();
 
-app.set('json spaces', 2);
+app.set("json spaces", 2);
 
-app.get('/cards', async () => {
-  // respond with a list of cards
-})
-
-app.get('/cards/:cardId/:sizeId?', () => {
-  // respond with card by id
-})
+app.get("/cards", cardController.listCards);
+app.get("/cards/:cardId/:sizeId?", cardController.getCardDetails);
