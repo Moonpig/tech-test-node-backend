@@ -16,7 +16,7 @@ const createCard = (card: CardDTO, sizes: CardSize[]): Card => {
     };
   };
 
-  const getDetails = (): CardDetails => {
+  const getDetails = (size: string): CardDetails => {
     return {
       title: card.title,
     };

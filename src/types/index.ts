@@ -11,7 +11,7 @@ export interface CardDTO {
 
 export interface Card {
   getSummary: () => CardSummary;
-  getDetails: () => CardDetails;
+  getDetails: (size: string) => CardDetails;
 }
 
 export interface CardSummary {
@@ -29,7 +29,7 @@ export interface CardSize {
 
 export interface CardDetails {
   title: string;
-  //   size: string;
+  size: string;
   //   availableSizes: {
   //     id: string;
   //     title: string;
