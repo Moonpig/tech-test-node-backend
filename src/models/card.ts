@@ -1,10 +1,10 @@
-import { CardDTO, Card, CardSummary } from "../types/index";
+import { CardDTO, Card, CardSummary, CardSize } from "../types/index";
 
-const createCard = (card: CardDTO): Card => {
+const createCard = (card: CardDTO, sizes: CardSize[]): Card => {
   const getSummary = (): CardSummary => {
     return {
       title: card.title,
-      imageUrl: "",
+      imageUrl: sizes[0].imageUrl,
       url: `/cards/${card.id}`,
     };
   };

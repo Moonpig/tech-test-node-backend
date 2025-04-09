@@ -18,3 +18,10 @@ export interface CardSummary {
   imageUrl: string;
   url: string;
 }
+
+export interface CardSize {
+  id: string;
+  width: number;
+  height: number;
+  imageUrl: string;
+}

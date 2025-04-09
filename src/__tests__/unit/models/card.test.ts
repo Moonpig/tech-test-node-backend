@@ -1,6 +1,6 @@
 import e from "express";
 import createCard from "../../../models/card";
-import { CardDTO } from "../../../types/index";
+import { CardDTO, CardSize } from "../../../types/index";
 
 let cardDTO: CardDTO = {
   id: "card001",
@@ -27,8 +27,59 @@ let cardDTO: CardDTO = {
   ],
 };
 
+let cardSizes: CardSize[] = [
+  {
+    id: "template001",
+    width: 300,
+    height: 600,
+    imageUrl: "/front-cover-portrait-1.jpg",
+  },
+  {
+    id: "template002",
+    width: 300,
+    height: 600,
+    imageUrl: "",
+  },
+  {
+    id: "template003",
+    width: 300,
+    height: 600,
+    imageUrl: "",
+  },
+  {
+    id: "template004",
+    width: 300,
+    height: 600,
+    imageUrl: "/back-cover-portrait.jpg",
+  },
+  {
+    id: "template005",
+    width: 300,
+    height: 600,
+    imageUrl: "/front-cover-portrait-2.jpg",
+  },
+  {
+    id: "template006",
+    width: 600,
+    height: 300,
+    imageUrl: "/front-cover-landscape.jpg",
+  },
+  {
+    id: "template007",
+    width: 600,
+    height: 300,
+    imageUrl: "",
+  },
+  {
+    id: "template008",
+    width: 600,
+    height: 300,
+    imageUrl: "/back-cover-landscape.jpg",
+  },
+];
+
 describe("Card Domain", () => {
-  const card = createCard(cardDTO);
+  const card = createCard(cardDTO, cardSizes);
 
   test("getSummary returns correct summary details", () => {
     const summary = card.getSummary();
