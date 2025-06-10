@@ -11,6 +11,16 @@ We have provided three JSON files that serve as source data - you can find them 
 
 Please treat these as a remote data source, rather than manually downloading and integrating into your application locally.
 
+## Notes
+
+We have provided a notes file `NOTES.md` for any notes that you wish to add that could help your application such as explaining why you've made certain decisions or any incomplete aspects of your solution.
+
+Please timebox your efforts to 4 hours. Add any comments or suggestions for further improvements to the NOTES.md file. While we are not expecting a fully feature-complete solution, we are looking for the same mindset you would apply to production code — such as trade-offs, maintainability, and API design and engineering best practices. We are particularly interested in evaluating your technical capability and approach to problem solving.
+
+For your convenience we've made this a template repository so you can easily create a private copy.
+
+Please commit frequently so we can see your approach and ensure you submit the .git folder alongside your code.  When it comes to submission please follow the instructions provided in the email you were sent. 
+
 ## Endpoints
 
 ### `/cards`
@@ -126,12 +136,3 @@ We will assess the task based on the following criteria:
 - Knowledge of Node and its APIs
 - Use of Git
 
-## Notes
-
-We have provided a notes file `NOTES.md` for any notes that you wish to add that could help your application such as explaining why you've made certain decisions or any incomplete aspects of your solution.
-
-Please note we appreciate that your free time is important and feel that doing less "well" is preferable to doing more "less well".  With this in mind if you feel that your code is unfinished please leave some notes explaining what you'd do given more time.  We'll be more than happy to review this.
-
-For your convenience we've made this a template repository so you can easily create a private copy.
-
-Please commit frequently so we can see your approach and ensure you submit the .git folder alongside your code.  When it comes to submission please follow the instructions provided in the email you were sent. 
