@@ -23,6 +23,9 @@ async function getAllCards() {
 async function getTemplates() {
   return fetchJson(templatesUrl);
 }
+async function getSizes() {
+  return fetchJson(sizesUrl);
+}
 
 
 app.get('/cards', async (req, res) => {
@@ -49,6 +52,44 @@ return {
   }
 })
 
-app.get('/cards/:cardId/:sizeId?', () => {
-  // respond with card by id
+app.get('/cards/:cardId/:sizeId?', async (req, res) => {
+  try{
+  // save what params user typed in
+  const { cardId, sizeId } = req.params;
+  const cards = await getAllCards();
+  const templates = await getTemplates();
+  const sizes = await getSizes();
+
+  // find card matching id
+  const card = cards.find(card => card.id === cardId);
+  if (!card) {
+    return res.status(404).json({ error: "Card not found" });
+  }
+  // get size requested 
+  // if (!sizeId) {
+  //   return res.status(404).json({ error: "Card size not found" });
+    const selectedSize = sizes.find(size => size.id === sizeId);
+    if (!selectedSize) {
+      return res.status(404).json({ error: "Card size not found" });
+    }
+    // format price
+    // price == base price * size multiplier || if no size multiplier, price === base price
+    const pricePence = selectedSize ? card.basePricePence * selectedSize.priceMultiplier : card.basePricePence;
+    const price = (pricePence / 100).toFixed(2);
+
+  // get template for card
+  const template  = templates.find(t => t.id === card.pages[0].templateId);
+
+  res.json({
+    title: card.title,
+    price,
+    imageUrl: template ? template.imageUrl : "No image available",
+  });
+
+
+
+  } catch (err) {
+    //eror handling
+  }
+
 })
