@@ -19,3 +19,5 @@ seperate concrns with different functions, but use a resusable function for fetc
 
 The mapping of the data is something I would have liked to extract into mapping functions that could be imported to make the code cleaner, and increase resusability if required. 
 
+Should have included pagination to gaurd against larger payloads. 
+
