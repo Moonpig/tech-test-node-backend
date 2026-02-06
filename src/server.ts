@@ -74,8 +74,8 @@ app.get('/cards/:cardId/:sizeId?', async (req, res) => {
     }
     // format price
     // price == base price * size multiplier || if no size multiplier, price === base price
-    const pricePence = selectedSize ? card.basePricePence * selectedSize.priceMultiplier : card.basePricePence;
-    const price = (pricePence / 100).toFixed(2);
+    const pricePence = selectedSize ? card.basePrice * selectedSize.priceMultiplier : card.basePrice;
+    const price = `£${(pricePence / 100).toFixed(2)}`; 
 
   // get template for card
   const template  = templates.find(t => t.id === card.pages[0].templateId);
