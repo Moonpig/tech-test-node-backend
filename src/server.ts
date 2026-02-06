@@ -65,15 +65,16 @@ app.get('/cards/:cardId/:sizeId?', async (req, res) => {
   if (!card) {
     return res.status(404).json({ error: "Card not found" });
   }
-  // get size requested 
-  // if (!sizeId) {
-  //   return res.status(404).json({ error: "Card size not found" });
-    const selectedSize = sizes.find(size => size.id === sizeId);
-    if (!selectedSize) {
+  // get size requested or set to be undfined if not provided
+  const selectedSize = sizeId
+  ? sizes.find(s => s.id === sizeId)
+  : undefined;
+
+  // 404 if given size param doesn't match any in data
+    if (sizeId && !selectedSize) {
       return res.status(404).json({ error: "Card size not found" });
     }
     // format price
-    // price == base price * size multiplier || if no size multiplier, price === base price
     const pricePence = selectedSize ? card.basePrice * selectedSize.priceMultiplier : card.basePrice;
     const price = `£${(pricePence / 100).toFixed(2)}`; 
 
@@ -86,10 +87,8 @@ app.get('/cards/:cardId/:sizeId?', async (req, res) => {
     imageUrl: template ? template.imageUrl : "No image available",
   });
 
-
-
   } catch (err) {
-    //eror handling
+    console.error(err);
+    res.status(500).json({ error: "Failed to fetch cards" });
   }
-
 })
